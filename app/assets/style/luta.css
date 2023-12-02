@@ -1,0 +1,262 @@
+/* ========== GOOGLE FONT ========== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@font-face {
+    font-family: SoleSans-BlackExtended;
+    src: url(../Fonts/SoleSans-BlackExtended.ttf);
+}
+
+
+:root{
+
+    --background-image: url("");
+
+    --header-height:3.5rem;
+
+    --first-hue: 250;
+    --sat: 66%;
+    --lig: 75%;
+    --second-hue: 219;
+
+    /* ========== GOOGLE FONT ========== */
+    --primary-color: #ffff;
+    --primary-color-dark: #000;
+    --second-color:	#fc5d18;
+    --second-color-dark: #FF2D04;
+    --background-color: #363640;
+    --background-color-transparent:	#363640cb;
+
+    --detail-color: #A7B9C7;
+    --detail-second-color: #96afc2;
+    --grey-color-dark: #77767B;
+
+    /* ========== FONT ========== */
+    --kami-font: 'SoleSans-BlackExtended', sans-serif;
+    --body-font: 'Poppins', sans-serif;
+    --biggest-font-size: 2.5rem;
+    --h1-font-size: 1.75rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;  
+    --normal-font-size: .937rem;
+    --small-font-size: .812rem;
+    --smaller-font-size: .75rem;
+    --tiny-font-size:.625rem;
+
+    /* ========== FONT WEIGHT ========== */
+    --font-normal:400;
+    --font-medium: 500;    
+    --font-semibold: 600;
+
+    /* ========== Z-INDEX ========== */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+/*RESPONSIVO*/
+@media  screen and (min-width:968px) {
+    :root{
+        --biggest-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;  
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: var(--background-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1,h2{
+    font-size: 2rem;
+    margin: 0.5rem;
+    font-weight: var(--font-semibold);
+    font-family: var(--kami-font);
+    color: var(--primary-color);
+    text-shadow: 0 0px 10px rgba(255, 208, 1, 0.607);
+}
+
+h1{
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+img{
+    width: 60%;
+    height: auto;
+}
+
+button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+#exampleModalLabel,
+#modalOp1,
+#modalOp2 {
+    color: var(--primary-color);
+}
+
+#modalOp1,
+#modalOp2{
+    font-size: var(--h2-font-size);
+}
+
+p{
+    font-family: var(--body-font);
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-semibold);
+    color: var(--primary-color);
+    text-align: center;
+    justify-content: center;
+}
+
+.btn{
+    cursor: pointer;
+    font-family: var(--kami-font);
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-semibold);
+    color: var(--primary-color);
+    text-shadow: 0 0px 10px rgba(255, 208, 1, 0.607);
+    background-color: transparent;
+    transition: 0.3s;
+    width: 150px;
+    transform-origin: center center;
+    padding: 0.5rem;
+    border: none;
+    justify-content: center;
+}
+
+.btn:hover{
+    letter-spacing: 0.2rem;
+    background-color: transparent;
+}
+
+.progress-bar{
+    background: linear-gradient(25deg, rgba(254,191,8,1) 31%, rgba(53,208,25,1) 92%) !important  ;
+}
+
+#vidaHeroi{
+    background: linear-gradient(25deg, rgba(53,208,25,1) 8%, rgba(254,191,8,1) 69%) !important  ;
+    flex-direction: row-reverse;
+}
+
+.progress{
+    flex-direction: row-reverse;
+    --bs-progress-bg: rgba(202, 202, 202, 0.68);
+}
+
+.personagem{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.vilao{
+    direction: rtl; 
+}
+
+.player2{
+    transform: scaleX(-1);
+}
+
+.text-center{
+    margin: 1rem;
+}
+
+.container{
+    padding: 0;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+#golpes{
+    color: var(--primary-color);
+    font-weight: var(--font-medium);
+    font-size: var(--h2-font-size);
+}
+
+.progress{
+    --bs-progress-height: 1.5rem;
+    --bs-progress-bar-color: var(--primary-color-dark);
+    --bs-progress-font-size: 0.85rem;
+    font-weight: var(--font-medium);
+}
+
+.card__container{
+    border: none;
+}
+
+.luta {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: center !important; 
+    align-items: center; 
+}
+
+.col{
+    flex: auto;
+}
+
+.card{
+    padding: 0.3rem;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: rgba(0, 0, 0, 0.669);
+    height: auto;
+    width: 100%;
+}
+
+.modal-footer {
+    justify-content: center;
+    gap: 30px;
+}
+.modal-header {
+    justify-content: center;
+    align-items: center;
+}
+.modal-content{
+    border: 2px solid var(--primary-color-dark);
+    color: var(--primary-color);
+    background-color: rgba(114, 111, 111, 0.779);
+}
+
+.col__txt{
+    margin: 1rem;
+}
+
+
+@media screen and (min-width: 1920px){
+    #golpes{
+        font-size: 2rem;
+    }
+    h1{
+        font-size: 10rem;
+    }
+    h2{
+        font-size: 3rem;
+    }
+    h5{
+        font-size: 1.7rem;
+    }
+    .btn{
+        font-size: var(--h1-font-size);
+    }
+}

@@ -1,0 +1,426 @@
+/* ========== GOOGLE FONT ========== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+@font-face {
+    font-family: SoleSans-BlackExtended;
+    src: url(../Fonts/SoleSans-BlackExtended.ttf);
+}
+
+
+:root {
+
+    --background-image: url("../images/backplanet.jpg");
+    --overlay-color: rgba(0, 0, 0, 0.2);
+
+    --header-height: 3.5rem;
+
+    --first-hue: 250;
+    --sat: 66%;
+    --lig: 75%;
+    --second-hue: 219;
+
+    /* ========== GOOGLE FONT ========== */
+    --primary-color: #ffff;
+    --primary-color-dark: #000;
+    --second-color: #fc5d18;
+    --second-color-dark: #FF2D04;
+    --background-color: #363640;
+    --background-color-transparent: #363640cb;
+
+    --detail-color: #A7B9C7;
+    --detail-second-color: #96afc2;
+    --grey-color-dark: #77767B;
+
+    /* ========== FONT ========== */
+    --kami-font: 'SoleSans-BlackExtended', sans-serif;
+    --body-font: 'Poppins', sans-serif;
+    --biggest-font-size: 2.5rem;
+    --h1-font-size: 1.75rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: .937rem;
+    --small-font-size: .812rem;
+    --smaller-font-size: .75rem;
+    --tiny-font-size: .625rem;
+
+    /* ========== FONT WEIGHT ========== */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+
+    /* ========== Z-INDEX ========== */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+/*RESPONSIVO*/
+@media screen and (min-width:968px) {
+    :root {
+        --biggest-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    background-image: var(--background-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; 
+}
+
+h1,
+h2,
+h3 {
+    color: var(--primary-color);
+    font-weight: var(--font-normal);
+}
+
+h1,h2{
+    font-size: 2rem;
+    margin: 1rem;
+    font-weight: var(--font-semibold);
+    font-family: var(--kami-font);
+    color: var(--primary-color);
+}
+
+h1{
+    font-size: 5rem;
+    text-align: center;
+    width: 100%;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: 100%;
+}
+
+/* ========== CLASSES REUTILIZAVEIS ========== */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color);
+    pointer-events: none;
+    z-index: -2;
+}
+
+.container {
+    max-width: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.grid {
+    display: grid;
+}
+
+.section__title,
+.section__subtitle {
+    text-align: center;
+}
+
+.section__title {
+    font-weight: var(--font-semibold);
+    font-family: var(--kami-font);
+    color: var(--primary-color);
+    text-shadow: 0 0px 10px rgba(255, 208, 1, 0.607);
+}
+
+.section__subtitle {
+    display: block;
+    font-weight: var(--font-semibold);
+    font-size: var(--h1-font-size);
+    color: var(--second-color);
+    font-family: var(--kami-font);
+}
+
+.menu__game {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 85%, rgba(255, 255, 255, 0) 100%);
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slideToLeft {
+    animation: slideFromLeft 0.5s ease-in-out;
+    margin-right: -15px;
+}
+
+.slideToRight {
+    animation: slideFromRight 0.5s ease-in-out;
+}
+
+.selecao {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-between;
+}
+
+.selecao__heroi,
+.selecao__vilao {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.selecao__vilao {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+}
+
+.col__txt{
+    text-shadow: 0 0px 10px rgba(255, 208, 1, 0.607);
+}
+
+.subdiv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 250px;
+}
+
+.vilao img {
+    transform: scaleX(-1);
+}
+
+/* ========== SERVICES ==========  */
+.services__container {
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.services__card {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 24%, rgba(0, 0, 0, 1) 47%);
+    border: 1px solid white;
+    width: 120px;
+    height: auto;
+    overflow: hidden;
+    transition: 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.services__card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 5px 20px rgba(255, 208, 1, 0.607);
+}
+
+.services__card img {
+    width: 100%;
+    height: 100%;
+}
+
+.services__title {
+    font-size: var(--h3-font-size);
+    text-align: center;
+    color: var(--primary-color);
+    background-color: #000;
+    padding: 8px;
+}
+
+.services__button {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+    align-items: center;
+}
+
+.options {
+    border-radius: 10px;
+}
+
+.btn,
+.random {
+    cursor: pointer;
+    font-family: var(--kami-font);
+    font-weight: var(--font-semibold);
+    transition: 0.3s;
+    background: transparent;
+    font-size: 2rem;
+    transform-origin: center center;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    text-shadow: 0 0px 10px rgba(255, 208, 1, 0.607);
+}
+
+.btn:hover {
+    letter-spacing: 0.2rem;
+}
+
+.random:hover {
+    letter-spacing: 0.2rem;
+}
+
+.random {
+    font-size: var(--h3-font-size);
+    display: flex;
+    margin: auto;
+}
+
+
+.selections {
+    border: none;
+    width: 100px;
+    height: 1.7rem;
+    padding: 3px;
+    font-family: var(--body-font);
+    border-radius: 10px;
+}
+
+.options {
+    border-radius: 10px;
+}
+
+.box-shadow {
+    transform: scale(1.08);
+    box-shadow: 0 5px 20px rgba(255, 208, 1, 0.607);
+}
+
+/* ========== RESPONSIVE ==========  */
+@media screen and (min-width: 320px) {
+    .services__container {
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        gap: 25px;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .services__container {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        padding-bottom: 1.5rem;
+        gap: 25px;
+    }
+    h1{
+        font-size: 6rem;
+    }
+    .section__title {
+        font-size: 2rem;
+    }
+
+    .services__card {
+        width: 80px;
+        height: 80px;
+    }
+
+    .services__title {
+        font-size: var(--normal-font-size);
+    }
+
+    .btn {
+        padding-top: 1.5rem;
+        font-size: 2rem;
+    }
+    img{
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .services__container {
+        margin: 0 2rem 0 2rem;
+    }
+
+    h1{
+        font-size: 10rem;
+    }
+    h1,h2{
+        margin: 1rem;
+    }
+
+    .services__card {
+        width: 120px;
+        height: 120px;
+    }
+
+    img{
+        width: 80%;
+    }
+
+}
