@@ -97,6 +97,7 @@ async function chutar(element, nomePerson1, nomePerson2) {
         let vida = element.innerText.split("%").join("")
         vida = vida - dano;
         modalGolpe(nomePerson1 + ' chutou ' + nomePerson2)
+        await emitirSom('chute');
         setTimeout(() => vida = atualizarVida(element, vida),1300); 
    
         if (vida < 1) {
@@ -113,13 +114,15 @@ async function soco(element, nomePerson1, nomePerson2) {
     if (dano != 0) {
         let vida = element.innerText.split("%").join("")
         vida = vida - dano;
-        modalGolpe(nomePerson1 + ' chutou ' + nomePerson2)
+        modalGolpe(nomePerson1 + ' deu um soco em ' + nomePerson2)
+        await emitirSom('soco');
         setTimeout(() => vida = atualizarVida(element, vida),1300);
         if (vida < 1) {
             modalText.innerText = nomePerson1 + ' Wins...'
             $(modal).modal("show");
         }        
         modalGolpe(nomePerson1 + ' deu um soco em ' + nomePerson2)
+        
     }else{
         modalGolpe(nomePerson1 + ' errou o ataque')
     }

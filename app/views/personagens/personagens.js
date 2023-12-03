@@ -19,14 +19,6 @@ document.addEventListener('click', function () {
 
 });
 
-//Não sei o motivo, mas essa funcão não funciona aqui, apenas no script em baixo do body ( ´･･)ﾉ(._.`)
-// function emitirSom(arquivoDeAudio) {
-    
-//     arquivoDeAudio = 'audio-selecionar.mp3'
-//     const audio = new Audio(arquivoDeAudio);
-//     audio.play();
-// }
-
 
 
 function limparSelecao(text) {
