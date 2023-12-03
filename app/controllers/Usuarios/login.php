@@ -6,7 +6,41 @@ require_once $rootDir . '/App/Common/Environment.php';
 use \App\Common\Environment;
 
 Environment::load();
+$con = new mysqli(getenv('DB_HOSTNAME'), getenv('DB_USERNAME'), getenv('DB_PASSWORD'));
+
+
+
+// Verificar a conexão
+if ($con->connect_error) {
+    die("Falha na conexão: " . $con->connect_error);
+}
+
+$dbname = getenv('DB_DATABASE');
+// Criação do banco de dados se não existir
+$sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+if ($con->query($sql) === TRUE) {
+}
+
+// Conexão com o banco de dados específico
 $con = new mysqli(getenv('DB_HOSTNAME'), getenv('DB_USERNAME'), getenv('DB_PASSWORD'), getenv('DB_DATABASE'));
+$table_check_query = "SHOW TABLES LIKE 'usuario'";
+$result = $con->query($table_check_query);
+
+
+if ($result->num_rows == 0) {
+    // A tabela de usuários não existe, então executa o arquivo SQL para criar a tabela
+    $sql_file = __DIR__ . '/../../../script.sql';
+
+    // Lê o conteúdo do arquivo SQL
+    $sql_content = file_get_contents($sql_file);
+
+    if ($sql_content !== false) {
+        if ($con->multi_query($sql_content) === TRUE) {
+           
+        } 
+    } 
+} 
+
 
 session_start();
 
