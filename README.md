@@ -15,3 +15,5 @@
 <br>`senha` varchar(255) NOT NULL
 <br>)
 ##
+![Captura de Tela (19)](https://github.com/KenzoSant/Street-Fighter/assets/83035443/3142d9dd-75a8-408e-9c9e-c9239a8bed2c)
+
