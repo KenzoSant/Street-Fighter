@@ -103,7 +103,7 @@ include('../../controllers/Mapa/mapa.php')
                     <img src="../../assets/images/background2.jpg" onclick="changeBackground(this)">
                 </div>
             </div>
-            <button class="random btn-heroi" onclick="randomBackground(this)">Random</button>
+            <button class="random btn-heroi" onclick="random()">Random</button>
         </div>
     </div>
 
@@ -130,7 +130,14 @@ include('../../controllers/Mapa/mapa.php')
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
     <script src="./mapa.js"></script>
-
+    <script>
+        async function emitirSom(arquivoDeAudio) {
+        
+        arquivoDeAudio = '../../assets/audio/audio-selecionar.mp3'
+        const audio = new Audio(arquivoDeAudio);
+        audio.play();
+    }
+</script>
 
 </body>
 

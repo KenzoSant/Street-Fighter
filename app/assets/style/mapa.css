@@ -263,6 +263,11 @@ p{
     transition: 0.3s;
 }
 
+.active{
+    transform: scale(1.08);
+    box-shadow: 0 3px 20px rgba(255, 208, 1, 0.607);
+}
+
 .services__card img:hover {
     transform: scale(1.08);
     box-shadow: 0 3px 20px rgba(255, 208, 1, 0.607);

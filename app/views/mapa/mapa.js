@@ -1,6 +1,9 @@
 const url = new URL(window.location.href);
 const params = new URLSearchParams(url.search);
 
+
+let listMapas = document.querySelectorAll('.services__card')
+
 let nomeHeroi = params.get("nomeHeroi");
 let nomeVilao = params.get("nomeVilao");
 
@@ -48,9 +51,16 @@ async function enviarDados(){
     });   
 }
 
-function changeBackground(element) {
+async function changeBackground(element) {
     var imageUrl = element.src;
-    console.log('Selected Image URL:', imageUrl);
+    listMapas.forEach((map)=>{
+        map = map.children[0]
+        if(map.classList.contains('active')){
+            map.classList.remove('active')
+        }
+    })
+    element.classList.add('active')
+    await emitirSom('./audio-selecionar.mp3');
     document.documentElement.style.setProperty('--background-image', 'url(' + imageUrl + ')');
 }
 
@@ -65,3 +75,34 @@ function randomBackground() {
 
 
 
+
+
+function random(){    
+    
+    let numero_aleatorio = gerarNumeroAleatorio();
+    let i = 0
+    let contador = 0
+    let interval = setInterval(function(){
+        if(i < numero_aleatorio){       
+        
+     
+        changeBackground(listMapas[contador].children[0])
+
+        contador++;
+        i++;  
+        if(contador == listMapas.length){
+            contador = 0;
+        }
+        }else{
+            clearInterval(interval)
+        }
+    
+       
+    },200)
+    }
+
+
+function gerarNumeroAleatorio() {
+    const numeroAleatorio = Math.floor(Math.random() * 15) + 16; // Gera um número entre 16 e 30
+    return numeroAleatorio;
+}

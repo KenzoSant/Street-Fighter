@@ -12,7 +12,6 @@ Environment::load();
 $con = new mysqli( getenv('DB_HOSTNAME'), getenv('DB_USERNAME'), getenv('DB_PASSWORD') , getenv('DB_DATABASE'));
 
 
-
 function buscarEmail($email, $con) {
   $query = "SELECT COUNT(*) as count FROM usuario WHERE email = ?";
 
