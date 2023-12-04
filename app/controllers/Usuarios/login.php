@@ -1,4 +1,5 @@
 <?php
+include('../Street-Fighter/env.php');
 $rootDir = dirname(__DIR__, 3);
 require_once $rootDir . '/vendor/autoload.php';
 require_once $rootDir . '/App/Common/Environment.php';
@@ -6,8 +7,8 @@ require_once $rootDir . '/App/Common/Environment.php';
 use \App\Common\Environment;
 
 Environment::load();
-$con = new mysqli(getenv('DB_HOSTNAME'), getenv('DB_USERNAME'), getenv('DB_PASSWORD'));
-
+// $con = new mysqli(getenv('DB_HOSTNAME'), getenv('DB_USERNAME'), getenv('DB_PASSWORD'));
+$con = new mysqli($DB_HOSTNAME, $DB_USERNAME, $DB_PASSWORD);
 
 
 // Verificar a conexão
@@ -22,7 +23,8 @@ if ($con->query($sql) === TRUE) {
 }
 
 // Conexão com o banco de dados específico
-$con = new mysqli(getenv('DB_HOSTNAME'), getenv('DB_USERNAME'), getenv('DB_PASSWORD'), getenv('DB_DATABASE'));
+// $con = new mysqli(getenv('DB_HOSTNAME'), getenv('DB_USERNAME'), getenv('DB_PASSWORD'), getenv('DB_DATABASE'));
+$con = new mysqli($DB_HOSTNAME,$DB_USERNAME, $DB_PASSWORD, $DB_DATABASE);
 $table_check_query = "SHOW TABLES LIKE 'usuario'";
 $result = $con->query($table_check_query);
 

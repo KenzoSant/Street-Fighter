@@ -1,4 +1,5 @@
 <?php
+include('../../../env.php');
 $rootDir = dirname(__DIR__, 3); 
 require_once $rootDir . '/vendor/autoload.php';
 require_once $rootDir . '/App/Common/Environment.php';
@@ -9,8 +10,8 @@ Environment::load();
 
 
 
-$con = new mysqli( getenv('DB_HOSTNAME'), getenv('DB_USERNAME'), getenv('DB_PASSWORD') , getenv('DB_DATABASE'));
-
+// $con = new mysqli( getenv('DB_HOSTNAME'), getenv('DB_USERNAME'), getenv('DB_PASSWORD') , getenv('DB_DATABASE'));
+$con = new mysqli($DB_HOSTNAME,$DB_USERNAME, $DB_PASSWORD, $DB_DATABASE);
 
 function buscarEmail($email, $con) {
   $query = "SELECT COUNT(*) as count FROM usuario WHERE email = ?";
