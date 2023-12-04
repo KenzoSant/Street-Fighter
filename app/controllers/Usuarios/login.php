@@ -1,5 +1,5 @@
 <?php
-include('../../../env.php');
+include("env.php");
 $rootDir = dirname(__DIR__, 3);
 require_once $rootDir . '/vendor/autoload.php';
 require_once $rootDir . '/App/Common/Environment.php';
@@ -18,7 +18,7 @@ if ($con->connect_error) {
 
 $dbname = getenv('DB_DATABASE');
 // Criação do banco de dados se não existir
-$sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+$sql = "CREATE DATABASE IF NOT EXISTS $DB_DATABASE";
 if ($con->query($sql) === TRUE) {
 }
 
