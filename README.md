@@ -5,6 +5,7 @@
 - HTML, CSS, JS e PHP
 - Interface de usuário agradável.
 - Desenvolvido em grupo (Universitário)
+- Ao baixar o arquivo renomear a pasta para 'gamephp'
 - Banco de Dados necessário
 - Comando SQL:
 <br>create database gamephp;
